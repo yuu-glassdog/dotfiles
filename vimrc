@@ -302,10 +302,36 @@ let g:indent_guides_color_change_percent = 30
 let g:indent_guides_guide_size = 1
 " ========================================================================
 
-call neobundle#end()
+" solarized カラースキーム
+  NeoBundle 'altercation/vim-colors-solarized'
+" mustang カラースキーム
+  NeoBundle 'croaker/mustang-vim'
+" wombat カラースキーム
+  NeoBundle 'jeffreyiacono/vim-colors-wombat'
+" jellybeans カラースキーム
+  NeoBundle 'nanotech/jellybeans.vim'
+" lucius カラースキーム
+  NeoBundle 'vim-scripts/Lucius'
+" zenburn カラースキーム
+  NeoBundle 'vim-scripts/Zenburn'
+" mrkn256 カラースキーム
+  NeoBundle 'mrkn/mrkn256.vim'
+" railscasts カラースキーム
+  NeoBundle 'jpo/vim-railscasts-theme'
+" pyte カラースキーム
+  NeoBundle 'therubymug/vim-pyte'
+" molokai カラースキーム
+  NeoBundle 'tomasr/molokai'
+" カラースキーム一覧表示に Unite.vim を使う
+  NeoBundle 'ujihisa/unite-colorscheme'
+" コマンドラインで :Unite colorscheme -auto-previewすると試し見
 
+call neobundle#end()
 
 filetype plugin indent on
 
 " Vim起動時に未インストールのbundleがないかどうかをチェック
 NeoBundleCheck
+
+" カラースキームの選択
+colorscheme molokai
