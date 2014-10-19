@@ -1,3 +1,4 @@
+" This is test
 set nocompatible
 
 " 画面表示
