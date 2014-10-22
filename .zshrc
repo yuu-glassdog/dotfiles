@@ -1,7 +1,8 @@
 export LANG=ja_JP.UTF-8
-HISTFILE=$HOME/.zsh-history
-HISTSIZE=100
-SAVEHIST=100
+HISTFILE=$HOME/.zsh-history # 履歴ファイルの保存先
+HISTSIZE=10000              # メモリに保存される履歴の件数
+SAVEHIST=10000              # 指定したファイルに保存される件数
+# history検索はCtrl-r
 
 # cdなしでディレクトリ名を直接指定して移動 & ls実行
 setopt auto_cd
@@ -24,7 +25,7 @@ bindkey -r '^s' # Ctrl-s
 #compinit
 
 # alias -----------------------------------------------------------
-alias gcc='gcc -o' #(出力ファイル名)(ソースファイル名)でコンパイル
+alias gcc='gcc -o'  #(出力ファイル名)(ソースファイル名)でコンパイル
 
 alias rm='rm -i'    # コマンド実行時に一度確認する
 alias cp='cp -i'    #               〃
