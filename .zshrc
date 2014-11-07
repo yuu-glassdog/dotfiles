@@ -42,6 +42,7 @@ alias df='df -h'    # 容量を適当な単位で表示
 alias du='du -h'    #           〃
 
 alias open='cygstart'   # ファイルやディレクトリを開く
+alias pry='pry _0.10.1_'
 
 alias ipconfig='ipconfig | nkf -w'  # 文字化け防止
 alias ifconfig='ifconfig | nkf -w'  #       〃
@@ -53,7 +54,7 @@ alias getmac='getmac | nkf -w'      #       〃
 autoload -U colors
 colors
 
-## 色を使う
+# 色を使う
 setopt prompt_subst
 
 # 補完でカラー使用
