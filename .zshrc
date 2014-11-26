@@ -47,6 +47,7 @@ alias pry='pry _0.10.1_'
 alias ipconfig='ipconfig | nkf -w'  # 文字化け防止
 alias ifconfig='ifconfig | nkf -w'  #       〃
 alias getmac='getmac | nkf -w'      #       〃
+alias netstat='netstat -r | nkf -w'
 
 # prompt -----------------------------------------------------------
 

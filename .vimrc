@@ -116,7 +116,6 @@ set mouse=a  " マウスの入力を受け付ける
 
 
 
-
 source $VIMRUNTIME/mswin.vim  " Ctrl-V、Ctrl-C、Ctrl-Xが使えるようにする
                               " Ctrl-Cのプログラム動作停止はCtrl-BREAKで代用
                               " Ctrl-Vの方形視覚選択はCtrl-Qで代用
