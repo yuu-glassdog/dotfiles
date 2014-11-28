@@ -179,6 +179,11 @@ NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 
+" シンタックスチェック
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+
 " 入力補完=============================================================
 NeoBundle 'Shougo/neocomplcache'
 " AutoComplPopの無効化
