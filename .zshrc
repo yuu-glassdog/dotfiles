@@ -25,7 +25,7 @@ bindkey -r '^s' # Ctrl-s
 #compinit
 
 # alias -----------------------------------------------------------
-alias gcc='gcc -o'  #(出力ファイル名)(ソースファイル名)でコンパイル
+#alias gcc='gcc -o'  #(出力ファイル名)(ソースファイル名)でコンパイル
 
 alias rm='rm -i'    # コマンド実行時に一度確認する
 alias cp='cp -i'    #               〃
@@ -45,9 +45,17 @@ alias open='cygstart'   # ファイルやディレクトリを開く
 alias pry='pry _0.10.1_'
 
 alias ipconfig='ipconfig | nkf -w'  # 文字化け防止
-alias ifconfig='ifconfig | nkf -w'  #       〃
+alias ifconfig='ipconfig | nkf -w'  #       〃
 alias getmac='getmac | nkf -w'      #       〃
 alias netstat='netstat -r | nkf -w'
+
+alias javac='javac -J-Dfile.encoding=UTF-8'
+alias java='java -Dfile.encoding=UTF-8'
+
+alias tw='ruby ~/desktop/SLP/Twitter-app/tweet_own.rb'      # Twitterで呟く
+alias tl='ruby ~/desktop/SLP/Twitter-app/look_tweet.rb'     # TLを見る
+alias ts='ruby ~/desktop/SLP/Twitter-app/search_tweet.rb'   # ツイート検索
+alias nl='ruby ~/desktop/SLP/Twitter-app/look_news.rb'      # ニュースを見る
 
 # prompt -----------------------------------------------------------
 
@@ -76,4 +84,5 @@ PROMPT="
 # RPROMPT="%F{cyan}[%~]%f"
 # setopt transient_rprompt
 
-
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
