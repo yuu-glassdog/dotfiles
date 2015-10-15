@@ -60,7 +60,7 @@ alias nl='ruby ~/desktop/SLP/Twitter-app/look_news.rb'      # ニュースを見
 
 # prompt -----------------------------------------------------------
 
-# 色有効
+# 色を有効に
 autoload -U colors
 colors
 
