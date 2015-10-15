@@ -48,6 +48,7 @@ alias ipconfig='ipconfig | nkf -w'  # 文字化け防止
 alias ifconfig='ipconfig | nkf -w'  #       〃
 alias getmac='getmac | nkf -w'      #       〃
 alias netstat='netstat -r | nkf -w'
+alias ping='cocot ping'
 
 alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
@@ -83,6 +84,9 @@ PROMPT="
 # 右側のプロンプト。ここでカレントディレクトリを出す。
 # RPROMPT="%F{cyan}[%~]%f"
 # setopt transient_rprompt
+
+#PROMPT="
+#[%n@%m]%# "
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
