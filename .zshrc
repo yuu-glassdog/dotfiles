@@ -67,7 +67,7 @@ colors
 # 色を使う
 setopt prompt_subst
 
-# 補完でカラー使用
+# 補完でカラーを使用
 autoload colors
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 
