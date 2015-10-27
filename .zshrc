@@ -25,7 +25,7 @@ bindkey -r '^s' # Ctrl-s
 #compinit
 
 # alias -----------------------------------------------------------
-#alias gcc='gcc -o'  #(出力ファイル名)(ソースファイル名)でコンパイル
+alias ac='apt-cyg'
 
 alias rm='rm -i'    # コマンド実行時に一度確認する
 alias cp='cp -i'    #               〃
