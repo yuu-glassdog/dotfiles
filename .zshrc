@@ -17,12 +17,16 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 使わないキーの無効化
 bindkey -r '^s' # Ctrl-s
 
+# Git補完
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh/completion $fpath)
+
 # 予測変換
 #autoload predict-on
 #predict-on
 
-#autoload -U compinit
-#compinit
+autoload -U compinit
+compinit -u
 
 # alias -----------------------------------------------------------
 alias ac='apt-cyg'
