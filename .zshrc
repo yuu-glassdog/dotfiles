@@ -22,9 +22,6 @@ zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh/completion $fpath)
 
 # 予測変換
-#autoload predict-on
-#predict-on
-
 autoload -U compinit
 compinit -u
 
