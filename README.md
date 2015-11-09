@@ -1,4 +1,3 @@
-# dotfiles
 ## Git clone
 $ git clone https://github.com/yuu-glassdog/dotfiles.git
 
