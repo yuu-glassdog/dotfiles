@@ -173,46 +173,46 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ファイルオープンを便利に
-"1NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite.vim'
 
 " Unite.vimで最近使ったファイルを表示できるようにする
-"1NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/neomru.vim'
 
 " スニペット補完
-"1NeoBundle 'Shougo/neosnippet'
-"1NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 " Plugin key-mappings.
-"2imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"2smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"2xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 " SuperTab like snippets behavior.
-"2imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"2\ "\<Plug>(neosnippet_expand_or_jump)"
-"2\: pumvisible() ? "\<C-n>" : "\<TAB>"
-"2smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"2\ "\<Plug>(neosnippet_expand_or_jump)"
-"2\: "\<TAB>"
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 " For snippet_complete marker.
-"2if has('conceal')
-"2  set conceallevel=2 concealcursor=i
-"2endif
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " シンタックスチェック
-"1NeoBundle 'scrooloose/syntastic'
-"2let g:syntastic_enable_signs=1
-"2let g:syntastic_auto_loc_list=2
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
 
 " 入力補完=============================================================
-"1NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache'
 " AutoComplPopの無効化
-"2let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 0
 " vimを立ち上げた時に、自動でneocomplcacheをONにする
-"2let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
-"2let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_smart_case = 1
 " Set minimum syntax keyword length.
-"2let g:neocomplcache_min_syntax_length = 3
-"2let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Enable heavy features.
 " Use camel case completion.
@@ -221,45 +221,45 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "let g:neocomplcache_enable_underbar_completion = 1
 
 " Define dictionary.
-"2let g:neocomplcache_dictionary_filetype_lists = {
-"2    \ 'default' : '',
-"2    \ 'vimshell' : $HOME.'/.vimshell_hist',
-"2    \ 'scheme' : $HOME.'/.gosh_completions'
-"2        \ }
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
 
 " Define keyword.
-"2if !exists('g:neocomplcache_keyword_patterns')
-"2    let g:neocomplcache_keyword_patterns = {}
-"2endif
-"2let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-"2inoremap <expr><C-g>     neocomplcache#undo_completion()
-"2inoremap <expr><C-l>     neocomplcache#complete_common_string()
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-"2inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-"2function! s:my_cr_function()
-"2  return neocomplcache#smart_close_popup() . "\<CR>"
-"2  " For no inserting <CR> key.
-"2  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-"2endfunction
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+endfunction
 " <TAB>: completion.
-"2inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-"2inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"2inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"2inoremap <expr><C-y>  neocomplcache#close_popup()
-"2inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
 
 " For cursor moving in insert mode(Not recommended)
-"2inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-"2inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-"2inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-"2inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
+inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
+inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
+inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
+inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 " Or set this.
 "let g:neocomplcache_enable_cursor_hold_i = 1
 " Or set this.
@@ -275,85 +275,85 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
-"2autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"2autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"2autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"2autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"2autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
-"2if !exists('g:neocomplcache_omni_patterns')
-"2  let g:neocomplcache_omni_patterns = {}
-"2endif
-"2let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"2let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"2let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
-"2let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
 
 " =====================================================================
 
 " Ruby向けにendを自動挿入してくれる
-"1NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-endwise'
 
 " Vimを開いたままプログラム実行
-"1NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-quickrun'
 
 " コメントON/OFFを手軽に実行
-"1NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tomtom/tcomment_vim'
 
 " インデントに色を付けて見やすくする======================================
-"1NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " vimを立ち上げた時に、自動でvim-indent-guidesをONにする
-"2let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 1
 
 " ガイドをスタートするインデントの量
-"2let g:indent_guides_start_level=2
+let g:indent_guides_start_level=2
 
 " 自動カラー無効
-"2let g:indent_guides_auto_colors=0
+let g:indent_guides_auto_colors=0
 
 " 奇数インデントのカラー
-"2autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#444433 ctermbg=gray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#444433 ctermbg=gray
 
 " 偶数インデントのカラー
-"2autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
 
 " ハイライト色の変化の幅
-"2let g:indent_guides_color_change_percent = 30
+let g:indent_guides_color_change_percent = 30
 
 " ガイドの幅
-"2let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_size = 1
 
 "=========================================================================
 
 " solarized カラースキーム
-"1  NeoBundle 'altercation/vim-colors-solarized'
+  NeoBundle 'altercation/vim-colors-solarized'
 " mustang カラースキーム
-"1  NeoBundle 'croaker/mustang-vim'
+  NeoBundle 'croaker/mustang-vim'
 " wombat カラースキーム
-"1  NeoBundle 'jeffreyiacono/vim-colors-wombat'
+  NeoBundle 'jeffreyiacono/vim-colors-wombat'
 " jellybeans カラースキーム
-"1  NeoBundle 'nanotech/jellybeans.vim'
+  NeoBundle 'nanotech/jellybeans.vim'
 " lucius カラースキーム
-"1  NeoBundle 'vim-scripts/Lucius'
+  NeoBundle 'vim-scripts/Lucius'
 " zenburn カラースキーム
-"1  NeoBundle 'vim-scripts/Zenburn'
+  NeoBundle 'vim-scripts/Zenburn'
 " mrkn256 カラースキーム
-"1  NeoBundle 'mrkn/mrkn256.vim'
+  NeoBundle 'mrkn/mrkn256.vim'
 " railscasts カラースキーム
-"1  NeoBundle 'jpo/vim-railscasts-theme'
+  NeoBundle 'jpo/vim-railscasts-theme'
 " pyte カラースキーム
-"1  NeoBundle 'therubymug/vim-pyte'
+  NeoBundle 'therubymug/vim-pyte'
 " molokai カラースキーム
-"1  NeoBundle 'tomasr/molokai'
+  NeoBundle 'tomasr/molokai'
 " カラースキーム一覧表示に Unite.vim を使う
-"1  NeoBundle 'ujihisa/unite-colorscheme'
+  NeoBundle 'ujihisa/unite-colorscheme'
 " コマンドラインで :Unite colorscheme -auto-previewすると試し見
 
 
@@ -365,7 +365,7 @@ filetype plugin indent on
 NeoBundleCheck
 
 " カラースキームの選択
-"2colorscheme molokai
+colorscheme molokai
 
 
 
