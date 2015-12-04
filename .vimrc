@@ -57,7 +57,8 @@ inoremap <expr> ] MyInsertBracket(['['], ']')
 inoremap <expr> > MyInsertBracket(['<'], '>')
 inoremap <expr> " MyInsertBracket(['"'], '"')
 inoremap <expr> ' MyInsertBracket(['''', '`'], '''')
-
+" jjでエスケープ
+inoremap <silent> jj <ESC>  
 
 
 " ファイル処理関連
